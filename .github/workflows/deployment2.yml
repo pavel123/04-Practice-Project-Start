@@ -1,4 +1,4 @@
-name: lint
+name: deploy
 on: [push, workflow_dispatch]
 jobs:
   deploy:
