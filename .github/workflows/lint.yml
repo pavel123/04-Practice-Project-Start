@@ -4,5 +4,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Print hello
-        run: echo "Hello World!"
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run lint
+        run: npm lint
+      - name: Run tests
+        run: npm test
+      - name: Run build
+        run: npm build
